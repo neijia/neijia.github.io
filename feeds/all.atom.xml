@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>aa</title><link href="http://neijia.github.io/" rel="alternate"></link><link href="http://neijia.github.io/feeds/all.atom.xml" rel="self"></link><id>http://neijia.github.io/</id><updated>2015-06-09T15:56:12+02:00</updated><entry><title>Archlinux下使用Pelican和Github Pages搭建个人博客</title><link href="http://neijia.github.io/pelican.html" rel="alternate"></link><updated>2015-06-09T15:56:12+02:00</updated><author><name>Bruce Zhou</name></author><id>tag:neijia.github.io,2015-06-09:pelican.html</id><summary type="html">&lt;h1&gt;缘起&lt;/h1&gt;
+&lt;p&gt;虽网龄不小，当博客大行其道之时，我冷眼旁观，只因自身文学修养不高，更关键的是不知要写什么。自从玩了linux系统后，也积累了些笔记，算是有资本可以写写了。另外加上自己的一些其它爱好，如有自己的博客可以练练也是件开心的事。&lt;/p&gt;
+&lt;p&gt;前不久在linuxtoy上看到网站从WordPress迁移到了pelican，遂好奇心起，研究了下，发现pelican与GitHub配合可以建个人博客，于是就有了本文。&lt;/p&gt;
+&lt;h1&gt;安装pelican&lt;/h1&gt;
+&lt;p&gt;我用的linux发行版为archlinux，有强大的软件仓库和aur库。用yaourt里安装:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;yaourt -S pelican pelican-themes-git&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term=""></category></entry></feed>
