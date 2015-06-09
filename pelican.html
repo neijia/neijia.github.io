@@ -35,7 +35,7 @@
     <div class="post-meta">
         <span class="meta-prep">Post in</span>
         <abbr class="date" title="2015-06-09T15:56:12+08:00"> 
-            <a href="./archive/2015/6月/index.html">二 09 六月 2015 </a>
+            <a href="./archive/2015/Jun/index.html">Tue 09 June 2015 </a>
         </abbr>
         <span class="meta-prep"> |Tags</span>
                 <a href="./tag/linux.html">Linux</a>
@@ -125,6 +125,88 @@ Using project associated with current virtual environment. Will save to:
 
 <p>现在可以用浏览器打开<a href="http://localhost:8000">http://localhost:8000</a>来看实际效果。</p>
 <p>关于<em>pelican</em>的文档请参考<a href="http://docs.getpelican.com/en/3.5.0/">官网</a>.</p>
+<hr />
+<h1>Pelican设置</h1>
+<p>现在设置下主题及评论系统。</p>
+<h2>1. 主题选择</h2>
+<p>察看安装了哪些主题:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican-themes -l
+</pre></div>
+
+
+<p>显示:</p>
+<div class="highlight"><pre>gum
+sora
+mg
+pjport
+elegant
+lovers
+nikhil-theme
+pure
+sundown
+dev-random2
+bootstrap2-dark
+bootlex
+iris
+notmyidea-cms-fr
+photowall
+pelican-cait
+waterspill-en
+...
+</pre></div>
+
+
+<p>比如要选iris这个主题，则运行:</p>
+<div class="highlight"><pre><span class="nv">$ </span>pelican content -t iris
+</pre></div>
+
+
+<p>打开浏览器察看结果。为了操作更简单点，修改<em>pelicanconf.py</em>配置文件：</p>
+<div class="highlight"><pre>THEME = &#39;iris&#39;
+</pre></div>
+
+
+<h2>2. 添加评论系统</h2>
+<p>在<a href="https://disqus.com">Disqus</a>上申请帐号，按照流程Disqus会分配给你站点的Shortname，记牢Shortname，如果忘了请进入admin/settings中查看。然后同理，在pelicanconf.py添加</p>
+<div class="highlight"><pre>DISQUS_SITENAME = Shortname
+</pre></div>
+
+
+<hr />
+<h1>GitHub部署</h1>
+<p>Github就提供了<a href="https://pages.github.com/">Pages</a>功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。于是，我们就可以将生成的静态网页部署在Github Pages上。</p>
+<h2>1. 建立一个repository</h2>
+<p>登陆自己的Github主页，创建一个名字为：username.github.io 的repository。 其中必须修改username为自己账号的username，如：nurnoch.github.io</p>
+<h2>2. 将生成的静态网站上传到repository</h2>
+<p>进入output目录，运行:</p>
+<div class="highlight"><pre>git init
+git add .
+git remote add origin https://github.com/username/username.github.com.git
+git commit -m &quot;update&quot;
+git pull origin master
+git push origin master
+</pre></div>
+
+
+<p>注意更改自己的username号。</p>
+<h2>3. 访问</h2>
+<p>访问http://username.github.io 就可以看到自己的个人博客站点了。 </p>
+<h2>4. 更新</h2>
+<p>当博客更新后，用如下命令上传：</p>
+<div class="highlight"><pre>git status
+git commit -a -m &quot;update&quot;
+git push origin master
+</pre></div>
+
+
+<hr />
+<h1>参考</h1>
+<ol>
+<li><a href="http://duncanlock.net/blog/2013/05/17/how-i-built-this-website-using-pelican-part-1-setup/" title="duncanlock">How I built this website, using Pelican: Part 1 - Setup</a></li>
+<li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create/" title="xycoding">使用Pelican和GitHub Pages搭建个人博客 -- 基础</a></li>
+<li><a href="http://www.wengweitao.com/shi-yong-pelican-github-pagesda-jian-ge-ren-bo-ke.html" title="wengweitao">使用Pelican + Github Pages搭建个人博客</a></li>
+<li><a href="http://www.git-scm.com/book/zh/v1/" title="git参考">git参考手册</a></li>
+</ol>
     </div><!-- /.entry-content -->
     <footer class="post-meta">
         <span class="meta-prep">Category:</span>
