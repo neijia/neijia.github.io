@@ -200,6 +200,28 @@ git push origin master
 
 
 <hr />
+<h1>关于markdown</h1>
+<p>请参阅<a href="http://daringfireball.net/projects/markdown/syntax" title="markdown">官网</a></p>
+<p>另外在linux下推荐用<em>atom</em>或<em>retext</em>编辑器，当然我还是用我的<em>vim</em>。</p>
+<p><em>vim</em>写<em>Markdown</em>文件时，可以在<em>.vimrc</em>配置文件下设置<em>metadata</em>快捷键:</p>
+<div class="highlight"><pre><span class="s2">&quot;-- Markdown header --&quot;</span>
+<span class="kd">function</span><span class="o">!</span> <span class="nx">MarkdownHeader</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="p">)</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal iTitle: &quot;</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal oDate: &quot;</span> <span class="p">.</span> <span class="nx">date</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal oAuthors: &quot;</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal oCategory: &quot;</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal oTags: &quot;</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal oSlug: &quot;</span>
+<span class="nx">exe</span> <span class="s2">&quot;normal o&quot;</span>
+<span class="nx">endfunction</span>
+
+<span class="nx">nmap</span> <span class="o">&lt;</span><span class="nx">F5</span><span class="o">&gt;</span> <span class="o">:</span><span class="nx">call</span> <span class="nx">MarkdownHeader</span><span class="p">()</span><span class="o">&lt;</span><span class="nx">cr</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>这样在<em>vim</em>命令模式下按<em>F5</em>热键就能快速输入元数据了。</p>
+<hr />
 <h1>参考</h1>
 <ol>
 <li><a href="http://duncanlock.net/blog/2013/05/17/how-i-built-this-website-using-pelican-part-1-setup/" title="duncanlock">How I built this website, using Pelican: Part 1 - Setup</a></li>
@@ -250,6 +272,7 @@ git push origin master
                 </div>
                 <ul>
                         <li><a href="./category/linux.html" >Linux </a></li>
+                        <li><a href="./category/martial-art.html" >Martial art </a></li>
                 </ul>
             </section>
 
@@ -258,6 +281,7 @@ git push origin master
                     Tagcloud
                 </div>
                 <div>
+                        <span><a href="./tag/xingyi.html">Xingyi</a></span>
                         <span><a href="./tag/linux.html">Linux</a></span>
                 </div>
             </section>
