@@ -46,11 +46,85 @@
         <h1>缘起</h1>
 <p>虽网龄不小，当博客大行其道之时，我冷眼旁观，只因自身文学修养不高，更关键的是不知要写什么。自从玩了linux系统后，也积累了些笔记，算是有资本可以写写了。另外加上自己的一些其它爱好，如有自己的博客可以练练也是件开心的事。</p>
 <p>前不久在linuxtoy上看到网站从WordPress迁移到了pelican，遂好奇心起，研究了下，发现pelican与GitHub配合可以建个人博客，于是就有了本文。</p>
-<h1>安装pelican</h1>
+<hr />
+<h1>搭建pelican环境</h1>
 <p>我用的linux发行版为archlinux，有强大的软件仓库和aur库。用yaourt里安装:</p>
-<blockquote>
-<p>yaourt -S pelican pelican-themes-git</p>
-</blockquote>
+<div class="highlight"><pre>yaourt -S pelican pelican-themes-git fabric python-virtualenv  python-virtualenvwrapper python-markdown
+</pre></div>
+
+
+<p>当然，如果你的linux发行版不是archlinux或者用的是windows的话，也可以安装pip, 并用pip安装相应的软件。</p>
+<p>接下来通过修改<em>.bashrc</em>申明<em>virtualenvwrapper</em>环境:</p>
+<div class="highlight"><pre># virtualenvwrapper config
+export PROJECT_HOME=~/dev
+export WORKON_HOME=~/dev/virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+</pre></div>
+
+
+<p>重新打开终端，或执行<code>source .bashrc</code>, 然后执行如下命令:</p>
+<div class="highlight"><pre><span class="nv">$ </span>mkproject duncanlock.net-pelican
+</pre></div>
+
+
+<p>终端会显示类似的:</p>
+<div class="highlight"><pre>New python executable in duncanlock.net-pelican/bin/python
+Installing distribute.........done.
+Installing pip...............done.
+virtualenvwrapper.user_scripts creating
+[...]
+Creating /home/duncan/dev/duncanlock.net-pelican
+Setting project for duncanlock.net-pelican to /home/duncan/dev/duncanlock.net-pelican
+</pre></div>
+
+
+<p>这样你就拥有一个虚拟环境<em>~/dev/virtualenvs/duncanlock.net-pelican</em>及一个新文件夹<em>~/dev/duncanlock.net-pelican</em>，用于放置你的项目文件。当你在这虚拟环境时，终端提示符也会改变，<em>(duncanlock.net-pelican)</em>会出现在提示符最前面。</p>
+<p>当下次要进入虚拟环境时，可以用<em>workon duncanlock.net-pelican</em>命令进入。</p>
+<hr />
+<h1>运行pelican</h1>
+<p>激动的时刻要到了，我们先来运行下pelican-quickstart</p>
+<div class="highlight"><pre>Welcome to pelican-quickstart v3.2.0.
+
+This script will help you create a new Pelican-based website.
+
+Please answer the following questions so this script can generate the files needed by Pelican.
+
+Using project associated with current virtual environment. Will save to:
+/home/duncan/dev/duncanlock.net-pelican
+</pre></div>
+
+
+<p>按提示操作，这里不再赘述了。</p>
+<p>操作完成后，可以在duncanlock.net-pelican/content目录下新建一个test.md文件测试下:</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Archlinux下使用Pelican和Github</span> <span class="n">Pages搭建个人博客</span>
+<span class="n">Date</span><span class="o">:</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mi">12</span>
+<span class="n">Authors</span><span class="o">:</span> <span class="n">Bruce</span> <span class="n">Zhou</span>
+<span class="n">Category</span><span class="o">:</span> <span class="n">Linux</span>
+<span class="n">Tags</span><span class="o">:</span> <span class="n">Linux</span>
+<span class="n">Slug</span><span class="o">:</span> <span class="n">pelican</span>
+
+<span class="n">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">test</span><span class="o">.</span>
+</pre></div>
+
+
+<p>然后运行:</p>
+<div class="highlight"><pre><span class="nv">$ </span>make html
+</pre></div>
+
+
+<p>或 </p>
+<div class="highlight"><pre><span class="nv">$ </span>fab build
+</pre></div>
+
+
+<p>个人倾向于用fab，因为arch下的软件包有点问题，当执行<em>make serve</em>时报错，疑是<em>python</em>版本问题，2和3建<em>http server</em>的用法不一样。</p>
+<p>执行:</p>
+<div class="highlight"><pre><span class="nv">$ </span>fab serve
+</pre></div>
+
+
+<p>现在可以用浏览器打开<a href="http://localhost:8000">http://localhost:8000</a>来看实际效果。</p>
+<p>关于<em>pelican</em>的文档请参考<a href="http://docs.getpelican.com/en/3.5.0/">官网</a>.</p>
     </div><!-- /.entry-content -->
     <footer class="post-meta">
         <span class="meta-prep">Category:</span>
