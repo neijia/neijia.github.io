@@ -44,18 +44,18 @@
     </div>
     </header>
     <div class="post-entry">
-        <h1>缘起</h1>
-<p>虽网龄不小，当博客大行其道之时，我冷眼旁观，只因自身文学修养不高，更关键的是不知要写什么。自从玩了linux系统后，也积累了些笔记，算是有资本可以写写了。另外加上自己的一些其它爱好，如有自己的博客可以练练也是件开心的事。</p>
-<p>前不久在linuxtoy上看到网站从WordPress迁移到了pelican，遂好奇心起，研究了下，发现pelican与GitHub配合可以建个人博客，于是就有了本文。</p>
+        <h1> 缘起 </h1>
+<p> 虽网龄不小 ， 当博客大行其道之时 ， 我冷眼旁观 ， 只因自身文学修养不高 ， 更关键的是不知要写什么 。 自从玩了 linux 系统后 ， 也积累了些笔记 ， 算是有资本可以写写了 。 另外加上自己的一些其它爱好 ， 如有自己的博客可以练练也是件开心的事 。</p>
+<p> 前不久在 linuxtoy 上看到网站从 WordPress 迁移到了 pelican， 遂好奇心起 ， 研究了下 ， 发现 pelican 与 GitHub 配合可以建个人博客 ， 于是就有了本文 。</p>
 <hr />
-<h1>搭建pelican环境</h1>
-<p>我用的linux发行版为archlinux，有强大的软件仓库和aur库。用yaourt里安装:</p>
+<h1> 搭建 pelican 环境 </h1>
+<p> 我用的 linux 发行版为 archlinux， 有强大的软件仓库和 aur 库 。 用 yaourt 里安装 :</p>
 <div class="highlight"><pre>yaourt -S pelican pelican-themes-git fabric python-virtualenv  python-virtualenvwrapper python-markdown
 </pre></div>
 
 
-<p>当然，如果你的linux发行版不是archlinux或者用的是windows的话，也可以安装pip, 并用pip安装相应的软件。</p>
-<p>接下来通过修改<em>.bashrc</em>申明<em>virtualenvwrapper</em>环境:</p>
+<p> 当然 ， 如果你的 linux 发行版不是 archlinux 或者用的是 windows 的话 ， 也可以安装 pip,  并用 pip 安装相应的软件 。</p>
+<p> 接下来通过修改 <em>.bashrc</em> 申明 <em>virtualenvwrapper</em> 环境 :</p>
 <div class="highlight"><pre># virtualenvwrapper config
 export PROJECT_HOME=~/dev
 export WORKON_HOME=~/dev/virtualenvs
@@ -63,12 +63,12 @@ source /usr/bin/virtualenvwrapper.sh
 </pre></div>
 
 
-<p>重新打开终端，或执行<code>source .bashrc</code>, 然后执行如下命令:</p>
+<p> 重新打开终端 ， 或执行 <code>source .bashrc</code>,  然后执行如下命令 :</p>
 <div class="highlight"><pre><span class="nv">$ </span>mkproject duncanlock.net-pelican
 </pre></div>
 
 
-<p>终端会显示类似的:</p>
+<p> 终端会显示类似的 :</p>
 <div class="highlight"><pre>New python executable in duncanlock.net-pelican/bin/python
 Installing distribute.........done.
 Installing pip...............done.
@@ -79,11 +79,11 @@ Setting project for duncanlock.net-pelican to /home/duncan/dev/duncanlock.net-pe
 </pre></div>
 
 
-<p>这样你就拥有一个虚拟环境<em>~/dev/virtualenvs/duncanlock.net-pelican</em>及一个新文件夹<em>~/dev/duncanlock.net-pelican</em>，用于放置你的项目文件。当你在这虚拟环境时，终端提示符也会改变，<em>(duncanlock.net-pelican)</em>会出现在提示符最前面。</p>
-<p>当下次要进入虚拟环境时，可以用<em>workon duncanlock.net-pelican</em>命令进入。</p>
+<p> 这样你就拥有一个虚拟环境 <em>~/dev/virtualenvs/duncanlock.net-pelican</em> 及一个新文件夹 <em>~/dev/duncanlock.net-pelican</em>， 用于放置你的项目文件 。 当你在这虚拟环境时 ， 终端提示符也会改变 ，<em>(duncanlock.net-pelican)</em> 会出现在提示符最前面 。</p>
+<p> 当下次要进入虚拟环境时 ， 可以用 <em>workon duncanlock.net-pelican</em> 命令进入 。</p>
 <hr />
-<h1>运行pelican</h1>
-<p>激动的时刻要到了，我们先来运行下pelican-quickstart</p>
+<h1> 运行 pelican</h1>
+<p> 激动的时刻要到了 ， 我们先来运行下 pelican-quickstart</p>
 <div class="highlight"><pre>Welcome to pelican-quickstart v3.2.0.
 
 This script will help you create a new Pelican-based website.
@@ -95,9 +95,9 @@ Using project associated with current virtual environment. Will save to:
 </pre></div>
 
 
-<p>按提示操作，这里不再赘述了。</p>
-<p>操作完成后，可以在duncanlock.net-pelican/content目录下新建一个test.md文件测试下:</p>
-<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Archlinux下使用Pelican和Github</span> <span class="n">Pages搭建个人博客</span>
+<p> 按提示操作 ， 这里不再赘述了 。</p>
+<p> 操作完成后 ， 可以在 duncanlock.net-pelican/content 目录下新建一个 test.md 文件测试下 :</p>
+<div class="highlight"><pre><span class="n">Title</span><span class="o">:</span> <span class="n">Archlinux 下使用 Pelican 和 Github</span> <span class="n">Pages 搭建个人博客 </span>
 <span class="n">Date</span><span class="o">:</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">09</span> <span class="mi">15</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mi">12</span>
 <span class="n">Authors</span><span class="o">:</span> <span class="n">Bruce</span> <span class="n">Zhou</span>
 <span class="n">Category</span><span class="o">:</span> <span class="n">Linux</span>
@@ -108,34 +108,34 @@ Using project associated with current virtual environment. Will save to:
 </pre></div>
 
 
-<p>然后运行:</p>
+<p> 然后运行 :</p>
 <div class="highlight"><pre><span class="nv">$ </span>make html
 </pre></div>
 
 
-<p>或 </p>
+<p> 或  </p>
 <div class="highlight"><pre><span class="nv">$ </span>fab build
 </pre></div>
 
 
-<p>个人倾向于用fab，因为arch下的软件包有点问题，当执行<em>make serve</em>时报错，疑是<em>python</em>版本问题，2和3建<em>http server</em>的用法不一样。</p>
-<p>执行:</p>
+<p> 个人倾向于用 fab， 因为 arch 下的软件包有点问题 ， 当执行 <em>make serve</em> 时报错 ， 疑是 <em>python</em> 版本问题 ，2 和 3 建 <em>http server</em> 的用法不一样 。</p>
+<p> 执行 :</p>
 <div class="highlight"><pre><span class="nv">$ </span>fab serve
 </pre></div>
 
 
-<p>现在可以用浏览器打开<a href="http://localhost:8000">http://localhost:8000</a>来看实际效果。</p>
-<p>关于<em>pelican</em>的文档请参考<a href="http://docs.getpelican.com/en/3.5.0/">官网</a>.</p>
+<p> 现在可以用浏览器打开 <a href="http://localhost:8000">http://localhost:8000</a> 来看实际效果 。</p>
+<p> 关于 <em>pelican</em> 的文档请参考 <a href="http://docs.getpelican.com/en/3.5.0/"> 官网 </a>.</p>
 <hr />
-<h1>Pelican设置</h1>
-<p>现在设置下主题及评论系统。</p>
-<h2>1. 主题选择</h2>
-<p>察看安装了哪些主题:</p>
+<h1>Pelican 设置 </h1>
+<p> 现在设置下主题及评论系统 。</p>
+<h2>1.  主题选择 </h2>
+<p> 察看安装了哪些主题 :</p>
 <div class="highlight"><pre><span class="nv">$ </span>pelican-themes -l
 </pre></div>
 
 
-<p>显示:</p>
+<p> 显示 :</p>
 <div class="highlight"><pre>gum
 sora
 mg
@@ -157,29 +157,29 @@ waterspill-en
 </pre></div>
 
 
-<p>比如要选iris这个主题，则运行:</p>
+<p> 比如要选 iris 这个主题 ， 则运行 :</p>
 <div class="highlight"><pre><span class="nv">$ </span>pelican content -t iris
 </pre></div>
 
 
-<p>打开浏览器察看结果。为了操作更简单点，修改<em>pelicanconf.py</em>配置文件：</p>
+<p> 打开浏览器察看结果 。 为了操作更简单点 ， 修改 <em>pelicanconf.py</em> 配置文件 ：</p>
 <div class="highlight"><pre>THEME = &#39;iris&#39;
 </pre></div>
 
 
-<h2>2. 添加评论系统</h2>
-<p>在<a href="https://disqus.com">Disqus</a>上申请帐号，按照流程Disqus会分配给你站点的Shortname，记牢Shortname，如果忘了请进入admin/settings中查看。然后同理，在pelicanconf.py添加</p>
+<h2>2.  添加评论系统 </h2>
+<p> 在 <a href="https://disqus.com">Disqus</a> 上申请帐号 ， 按照流程 Disqus 会分配给你站点的 Shortname， 记牢 Shortname， 如果忘了请进入 admin/settings 中查看 。 然后同理 ， 在 pelicanconf.py 添加 </p>
 <div class="highlight"><pre>DISQUS_SITENAME = Shortname
 </pre></div>
 
 
 <hr />
-<h1>GitHub部署</h1>
-<p>Github就提供了<a href="https://pages.github.com/">Pages</a>功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。于是，我们就可以将生成的静态网页部署在Github Pages上。</p>
-<h2>1. 建立一个repository</h2>
-<p>登陆自己的Github主页，创建一个名字为：username.github.io 的repository。 其中必须修改username为自己账号的username，如：nurnoch.github.io</p>
-<h2>2. 将生成的静态网站上传到repository</h2>
-<p>进入output目录，运行:</p>
+<h1>GitHub 部署 </h1>
+<p>Github 就提供了 <a href="https://pages.github.com/">Pages</a> 功能 ， 允许用户自定义项目首页 ， 用来替代默认的源码列表 。 所以 ，github Pages 可以被认为是用户编写的 、 托管在 github 上的静态网页 。 于是 ， 我们就可以将生成的静态网页部署在 Github Pages 上 。</p>
+<h2>1.  建立一个 repository</h2>
+<p> 登陆自己的 Github 主页 ， 创建一个名字为 ：username.github.io  的 repository。  其中必须修改 username 为自己账号的 username， 如 ：nurnoch.github.io</p>
+<h2>2.  将生成的静态网站上传到 repository</h2>
+<p> 进入 output 目录 ， 运行 :</p>
 <div class="highlight"><pre>git init
 git add .
 git remote add origin https://github.com/username/username.github.com.git
@@ -189,11 +189,11 @@ git push origin master
 </pre></div>
 
 
-<p>注意更改自己的username号。</p>
-<h2>3. 访问</h2>
-<p>访问http://username.github.io 就可以看到自己的个人博客站点了。 </p>
-<h2>4. 更新</h2>
-<p>当博客更新后，用如下命令上传：</p>
+<p> 注意更改自己的 username 号 。</p>
+<h2>3.  访问 </h2>
+<p> 访问 http://username.github.io  就可以看到自己的个人博客站点了 。 </p>
+<h2>4.  更新 </h2>
+<p> 当博客更新后 ， 用如下命令上传 ：</p>
 <div class="highlight"><pre>git status
 git commit -a -m &quot;update&quot;
 git push origin master
@@ -201,10 +201,10 @@ git push origin master
 
 
 <hr />
-<h1>关于markdown</h1>
-<p>请参阅<a href="http://daringfireball.net/projects/markdown/syntax" title="markdown">官网</a></p>
-<p>另外在linux下推荐用<em>atom</em>或<em>retext</em>编辑器，当然我还是用我的<em>vim</em>。</p>
-<p><em>vim</em>写<em>Markdown</em>文件时，可以在<em>.vimrc</em>配置文件下设置<em>metadata</em>快捷键:</p>
+<h1> 关于 markdown</h1>
+<p> 请参阅 <a href="http://daringfireball.net/projects/markdown/syntax" title="markdown"> 官网 </a></p>
+<p> 另外在 linux 下推荐用 <em>atom</em> 或 <em>retext</em> 编辑器 ， 当然我还是用我的 <em>vim</em>。</p>
+<p><em>vim</em> 写 <em>Markdown</em> 文件时 ， 可以在 <em>.vimrc</em> 配置文件下设置 <em>metadata</em> 快捷键 :</p>
 <div class="highlight"><pre><span class="s2">&quot;-- Markdown header --&quot;</span>
 <span class="kd">function</span><span class="o">!</span> <span class="nx">MarkdownHeader</span><span class="p">()</span>
 <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="nx">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-%d %T&quot;</span><span class="p">)</span>
@@ -221,15 +221,15 @@ git push origin master
 </pre></div>
 
 
-<p>这样在<em>vim</em>命令模式下按<em>F5</em>热键就能快速输入元数据了。</p>
+<p> 这样在 <em>vim</em> 命令模式下按 <em>F5</em> 热键就能快速输入元数据了 。</p>
 <hr />
-<h1>参考</h1>
+<h1> 参考 </h1>
 <ol>
 <li><a href="http://duncanlock.net/blog/2013/05/17/how-i-built-this-website-using-pelican-part-1-setup/" title="duncanlock">How I built this website, using Pelican: Part 1 - Setup</a></li>
-<li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create/" title="xycoding">使用Pelican和GitHub Pages搭建个人博客 -- 基础</a></li>
-<li><a href="http://www.wengweitao.com/shi-yong-pelican-github-pagesda-jian-ge-ren-bo-ke.html" title="wengweitao">使用Pelican + Github Pages搭建个人博客</a></li>
-<li><a href="http://particle128.com/posts/2013/09/blog-build.html" title="particle128">Linux下使用Github Pages搭建博客</a></li>
-<li><a href="http://www.git-scm.com/book/zh/v1/" title="git参考">git参考手册</a></li>
+<li><a href="http://www.xycoding.com/articles/2013/11/21/blog-create/" title="xycoding"> 使用 Pelican 和 GitHub Pages 搭建个人博客  --  基础 </a></li>
+<li><a href="http://www.wengweitao.com/shi-yong-pelican-github-pagesda-jian-ge-ren-bo-ke.html" title="wengweitao"> 使用 Pelican + Github Pages 搭建个人博客 </a></li>
+<li><a href="http://particle128.com/posts/2013/09/blog-build.html" title="particle128">Linux 下使用 Github Pages 搭建博客 </a></li>
+<li><a href="http://www.git-scm.com/book/zh/v1/" title="git 参考 ">git 参考手册 </a></li>
 <li><a href="http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html">virtualenvwrapper reference</a></li>
 <li><a href="https://virtualenv.pypa.io/en/latest/index.html">virtualenv reference</a></li>
 </ol>
@@ -276,7 +276,7 @@ git push origin master
                 </div>
                 <ul>
                         <li><a href="./category/it.html" >IT </a></li>
-                        <li><a href="./category/martial-art.html" >Martial art </a></li>
+                        <li><a href="./category/martial-art.html" >Martial Art </a></li>
                         <li><a href="./category/za-tan.html" >杂谈 </a></li>
                 </ul>
             </section>
@@ -286,14 +286,15 @@ git push origin master
                     Tagcloud
                 </div>
                 <div>
-                        <span><a href="./tag/yun-wei.html">运维</a></span>
+                        <span><a href="./tag/xun-lei.html">迅雷</a></span>
                         <span><a href="./tag/xing-yi-quan.html">形意拳</a></span>
+                        <span><a href="./tag/yun-wei.html">运维</a></span>
+                        <span><a href="./tag/shu-ru-fa.html">输入法</a></span>
+                        <span><a href="./tag/gfw.html">GFW</a></span>
                         <span><a href="./tag/linux.html">Linux</a></span>
                         <span><a href="./tag/ri-ji.html">日记</a></span>
                         <span><a href="./tag/qin-na.html">擒拿</a></span>
-                        <span><a href="./tag/xun-lei.html">迅雷</a></span>
-                        <span><a href="./tag/gfw.html">GFW</a></span>
-                        <span><a href="./tag/shu-ru-fa.html">输入法</a></span>
+                        <span><a href="./tag/xing-yi-ri-ji.html">形意，日记</a></span>
                 </div>
             </section>
 
